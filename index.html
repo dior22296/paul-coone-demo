@@ -8,17 +8,20 @@
 
   IMAGE SLOT MANIFEST — photoreal set, DELIVERED and wired in.
   Each slot keeps its inline SVG art as a loading background; the
-  photo <img> fades in over it on load. All photos are atmospheric
+  photo <img> fades in over it on load. Slots 1-5 are atmospheric
   barbershop imagery — none of them depict Paul Coone, and no copy
-  or alt text presents them as Paul or as his shop.
+  or alt text presents them as Paul or as his shop. Slot 6 is the
+  exception: Paul's real photo, pulled from his public Facebook
+  profile at Solomon's direction (2026-11-19), with the background
+  restyled to the site's dark barbershop atmosphere.
     1. data-slot="hero-fade"       -> assets/hero-fade.jpg       Hero background: barber giving a fade, dark shop, gold accent light
     2. data-slot="service-towel"   -> assets/hot-towel.jpg       The Cut media: hot towel service
     3. data-slot="band-interior"   -> assets/shop-interior.jpg   Full-width band: barbershop interior
     4. data-slot="gallery-fade"    -> assets/fade-closeup.jpg    Gallery: fade close-up, side profile
     5. data-slot="gallery-tools"   -> assets/tools-detail.jpg    Gallery: clippers, razor and comb detail
-    6. data-slot="about-portrait"  -> SVG monogram only. NO photo: a real photo of Paul
-       must never be substituted with a stranger's portrait. When Paul supplies a
-       real photo, add assets/paul-portrait.jpg and an <img class="slot-img"> here.
+    6. data-slot="about-portrait"  -> assets/paul-portrait.jpg  About portrait: Paul himself
+       (real photo from his public Facebook; background restyled dark/gold).
+       The SVG monogram stays underneath as the loading background.
   ============================================================
 -->
 <html lang="en">
@@ -672,6 +675,7 @@
           <text x="260" y="440" text-anchor="middle" font-family="Georgia,serif" font-size="17" letter-spacing="5" fill="#c9a227">PAUL COONE · AMARILLO, TX</text>
         </svg>
       </div>
+      <img class="slot-img" src="assets/paul-portrait.jpg" alt="Paul Coone, barber in Amarillo, Texas" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">
     </figure>
     <div class="abouttxt">
       <p class="eyebrow">About</p>
